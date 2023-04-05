@@ -1,0 +1,14 @@
+<h1>Post details</h1>
+
+<h2><%= @the_post.title %> (<a href="/edit_post/<%= @the_post.id %>">Edit</a>)</h2>
+<p><%= @the_post.content %>
+
+<h1>Comments</h1>
+<% @comments.each do |comment| %>
+<ul>
+<li>Anonymous comment: <%= comment.comment_content %> (<a href="/delete_comment/<%= comment.post_id %>/<%= comment.id %>">Delete</a>)</li>
+</ul>
+<% end %>
+
+<form action="/create_comment/<%= @the_post.id %>"><label for="Comment">Comment</label><textarea id="Comment" name="content" placeholder="Type comment here."></textarea><button>Add comment</button>
+</form>

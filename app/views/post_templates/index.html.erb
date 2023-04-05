@@ -1,0 +1,14 @@
+<h1>All posts</h1>
+
+<form action="/create_post">
+<label for="Title">Title</label><input id="Title" name="title" placeholder="Type title here">
+<label for="Content">Content</label><textarea id="Content" name="content" placeholder="Type content here"></textarea>
+<button>Create post</button>
+
+</form>
+
+<% @posts.each do |post| %>
+<ul>
+<li><a href="/posts/<%= post.id %>"><%= post.title %></a> (<a href="/delete_post/<%= post.id %>">Delete</a>)</li>
+</ul>
+<% end %>

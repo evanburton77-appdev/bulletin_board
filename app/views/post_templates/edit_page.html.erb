@@ -1,0 +1,6 @@
+<form action="/make_edit/<%= @post_id %>">
+<label for="Title">Title</label><textarea id="Title" name="title" value="<%= @post.title %>" placeholder="Enter title here..."><%= @post.title %></textarea>
+<label for="Content">Content</label><textarea id="Content" name="content" value="<%= @post.content %>" placeholder="Enter content here..."><%= @post.content %></textarea>
+<button>Update post</button>
+
+</form>
